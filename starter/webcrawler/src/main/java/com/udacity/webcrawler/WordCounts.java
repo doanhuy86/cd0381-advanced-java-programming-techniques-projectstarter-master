@@ -23,20 +23,20 @@ final class WordCounts {
    * @param popularWordCount the number of popular words to include in the result map.
    * @return a map containing the top {@param popularWordCount} words and counts in the right order.
    */
-  static Map<String, Integer> sortRegular(Map<String, Integer> wordCounts, int popularWordCount) {
-
-    // TODO: Reimplement this method using only the Stream API and lambdas and/or method references.
-
-    PriorityQueue<Map.Entry<String, Integer>> sortedCounts =
-        new PriorityQueue<>(wordCounts.size(), new WordCountComparator());
-    sortedCounts.addAll(wordCounts.entrySet());
-    Map<String, Integer> topCounts = new LinkedHashMap<>();
-    for (int i = 0; i < Math.min(popularWordCount, wordCounts.size()); i++) {
-      Map.Entry<String, Integer> entry = sortedCounts.poll();
-      topCounts.put(entry.getKey(), entry.getValue());
-    }
-    return topCounts;
-  }
+//  static Map<String, Integer> sortRegular(Map<String, Integer> wordCounts, int popularWordCount) {
+//
+//    // TODO: Reimplement this method using only the Stream API and lambdas and/or method references.
+//
+//    PriorityQueue<Map.Entry<String, Integer>> sortedCounts =
+//        new PriorityQueue<>(wordCounts.size(), new WordCountComparator());
+//    sortedCounts.addAll(wordCounts.entrySet());
+//    Map<String, Integer> topCounts = new LinkedHashMap<>();
+//    for (int i = 0; i < Math.min(popularWordCount, wordCounts.size()); i++) {
+//      Map.Entry<String, Integer> entry = sortedCounts.poll();
+//      topCounts.put(entry.getKey(), entry.getValue());
+//    }
+//    return topCounts;
+//  }
 
   static Map<String, Integer> sort(Map<String, Integer> wordCounts, int popularWordCount) {
 
