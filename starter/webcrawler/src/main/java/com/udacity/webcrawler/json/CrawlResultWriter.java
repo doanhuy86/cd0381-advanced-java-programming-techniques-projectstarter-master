@@ -1,7 +1,9 @@
 package com.udacity.webcrawler.json;
 
 import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -47,7 +49,7 @@ public final class CrawlResultWriter {
    *
    * @param writer the destination where the crawl result data should be written.
    */
-  public void write(Writer writer) {
+  public void write(Writer writer) throws IOException {
     // This is here to get rid of the unused variable warning.
     Objects.requireNonNull(writer);
     // TODO: Fill in this method.
